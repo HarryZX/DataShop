@@ -1,17 +1,12 @@
-<?php require('configs/config.php');?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bienvenido</title>
-	<link rel="stylesheet" href="">
-</head>
-<body>
-	<div class="menu">
-		<ul>
-			<li><a href="<?php echo SERVERURL; ?>Existencias">Existencias</a></li>
-		</ul>
+<?php
+require("includes/Headers.php");
+?>
+
+	<div class="container">
+		<p class="title is-1">¡Bienvenido!</p>
+		<p class="is-large">Sistema de registro de compras y ventas</p>
 	</div>
-</body>
-</html>
+
+<?php
+require("includes/Footers.php");
+?>
