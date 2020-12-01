@@ -2,7 +2,7 @@
 require('ConnectionDB.php');
 
 /**
- * CLASE PARA CONTROLAR EL ACCESO DEL USUARIO
+ * CLASE PARA LAS EXISTENCIAS
  */
 class ExistenciasModel extends ConnectionDB{
 
@@ -13,13 +13,13 @@ class ExistenciasModel extends ConnectionDB{
 	public function getExistencias()
 	{
 		# CREAMOS LA FUNCIÓN PARA DEVOLVER TODOS LOS DATOS
-		function existencia($IDEXISTENCIA, $IDLOTE, $DISPONIBLE){
-			$EXT = array('IDEXIST' => $IDEXISTENCIA, 'IDLT' => $IDLOTE, 'DISP' => $DISPONIBLE);
+		function existencia($IDPROD, $NOMBRE, $DESC, $PRECIOU, $CANTIDAD, $DISPONIBLE){
+			$EXT = array('IDPROD' => $IDPROD, 'NOM' => $NOMBRE, 'DES' => $DESC, 'PRU' => $PRECIOU, 'CANT' => $CANTIDAD, 'DISP' => $DISPONIBLE);
 			return $EXT;
 		}
 
 		// REALIZAMOS LA CONSULTA
-		$query = $this->connect()->prepare('SELECT idExistencia, idLote, disponible FROM existencias;');
+		$query = $this->connect()->prepare('SELECT p.idProducto, p.nombreProducto, p.descripcionProducto, p.precioProducto, l.unidadPorLote, e.disponible FROM existencias AS e JOIN lotes AS l JOIN productos AS p ON e.idLote = l.idLote AND l.idProducto = p.idProducto ;');
 		$query->execute();
 
 		// REALIZAMOS LA CONSULTA DE LOS DATOS CON FETCH

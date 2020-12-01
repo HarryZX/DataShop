@@ -2,7 +2,7 @@
 require('ConnectionDB.php');
 
 /**
- * CLASE PARA CONTROLAR EL ACCESO DEL USUARIO
+ * CLASE PARA LAS COMPRAS
  */
 class ComprasModel extends ConnectionDB{
 

@@ -5,9 +5,12 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>IdExistencia</th>
-					<th>IdLote</th>
-					<th>Disponible</th>
+					<th>IdProducto</th>
+					<th>Nombre</th>
+					<th>Descripción</th>
+					<th>Precio unitario</th>
+					<th>Cantidad en stock</th>
+					<th>Disponibilidad</th>
 				</tr>
 			</thead>
 
@@ -15,8 +18,11 @@
 				<?php
 					foreach ($tablaExistencias as $existe) {
 						echo "<tr>";
-						echo "<td>" . $existe['IDEXIST'] . "</td>";
-						echo "<td>" . $existe['IDLT'] . "</td>";
+						echo "<td>" . $existe['IDPROD'] . "</td>";
+						echo "<td>" . $existe['NOM'] . "</td>";
+						echo "<td>" . $existe['DES'] . "</td>";
+						echo "<td>" . "$" . $existe['PRU'] . "</td>";
+						echo "<td>" . $existe['CANT'] . "</td>";
 						echo "<td>" . $existe['DISP'] . "</td>";
 						echo "</tr>";
 					}
