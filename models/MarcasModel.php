@@ -29,5 +29,17 @@ class MarcasModel extends ConnectionDB{
 
 		return $todoMarcas;
 	}
+
+	// FUNCIÓN PARA INSERTAR DATOS EN LA TABLA TIPOS
+	public function setMarcas($marca)
+	{
+		// REALIZAMOS LA CONSULTA CORRESPONDIENTE
+		$query = $this->connect()->prepare('INSERT INTO tipos (marca) VALUES (:marca);');
+		
+		// INSERTAMOS LOS DATOS OBTENIDOS
+		$query->execute([':marca' => $marca]);
+
+		$query->closeCursor();
+	}	
 }
 ?>
