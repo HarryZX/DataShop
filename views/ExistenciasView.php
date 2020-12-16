@@ -23,7 +23,11 @@
 						echo "<td>" . $existe['DES'] . "</td>";
 						echo "<td>" . "$" . $existe['PRU'] . "</td>";
 						echo "<td>" . $existe['CANT'] . "</td>";
-						echo "<td>" . $existe['DISP'] . "</td>";
+						if ($existe['CANT'] > "0") {
+							echo "<td><span class='tag is-success'>" . $existe['DISP'] . "</span></td>";
+						}else{
+							echo "<td><span class='tag is-danger'>" . $existe['DISP'] . "</span></td>";
+						}
 						echo "</tr>";
 					}
 				?>
